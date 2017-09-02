@@ -1,0 +1,54 @@
+
+	<h1>Dashboard</h1>
+    		
+    <section class="row text-center placeholders">
+      <div class="col-6 placeholder">
+        <canvas id="myChart" width="400" height="300"></canvas>		              
+        <h4>Label</h4>
+        <div class="text-muted">Something else</div>
+      </div>
+      
+      <div class="col-6 placeholder">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+        <h4>Label</h4>
+        <span class="text-muted">Something else</span>
+      </div>		            
+    </section>
+    
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+	var myChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        labels: ["Guayas", "Pichincha", "Santo Domingo", "Imbabura", "Pastaza", "Otras Provincias"],
+	        datasets: [{
+	            label: 'Empresas por Provincia',
+	            data: [12, 19, 3, 5, 2, 7],
+	            backgroundColor: [
+					'rgba(0,158,126, 0.2)',
+					'rgba(236,93,94, 0.2)',
+					'rgba(61,134,189, 0.2)',
+					'rgba(251,177,0, 0.2)',
+					'rgba(255,0,12, 0.2)',
+					'rgba(45,196,55, 0.2)'
+	            ],
+	            borderColor: [
+					'rgba(0,158,126, 1)',
+					'rgba(236,93,94, 1)',
+					'rgba(61,134,189, 1)',
+					'rgba(251,177,0, 1)',
+					'rgba(255,0,12, 1)',
+					'rgba(45,196,55, 1)'	                          
+	            ],
+	            borderWidth: 4
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: { beginAtZero:true }
+	            }]
+	        }
+	    }
+	});    
+    </script>
