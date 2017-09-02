@@ -1,23 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+</head> 
+<body>
 
-	<h1>Dashboard</h1>
+	<h1>Análisis por Ingresos</h1>
     		
     <section class="row text-center placeholders">
+    
+      <div class="col-12 placeholder bg-secondary py-2 mb-4"><!-- Filtros  -->
+      
+      	<form autocomplete="off" novalidate onsubmit="return false;">      	
+		  <div class="form-row align-items-center">
+		  
+		    <div class="col-auto">
+		      <input type="text" class="form-control" placeholder="First name">
+		    </div>
+		    <div class="col-auto">
+		      <input type="text" class="form-control" placeholder="Last name">
+		    </div>
+		    
+		    <button class="btn btn-light float-right"><i class="fa fa-refresh"></i> Actualizar </button>		    
+		    		    
+		  </div>		  
+		</form>
+      	
+      </div>
+      
+      <div class="clearfix">&nbsp;</div> <!-- separador -->
+    
       <div class="col-6 placeholder">
-        <canvas id="myChart" width="400" height="300"></canvas>		              
-        <h4>Label</h4>
-        <div class="text-muted">Something else</div>
+        <canvas id="grafico-1"></canvas>		              
+        <h4>Clientes por Provincia</h4>
+        <div class="text-muted">Filtro: Periodo 2016 - 2017</div>
       </div>
       
       <div class="col-6 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <span class="text-muted">Something else</span>
-      </div>		            
+        <canvas id="grafico-2"></canvas>
+        <h4>Titulo 2</h4>
+        <span class="text-muted">Descripcion titulo 2</span>
+      </div>
+      
+      <div class="clearfix">&nbsp;</div>
+      
+      <div class="col-12 placeholder">
+      	<div class="card">  
+	      	<table class="table table-striped">
+	      	<thead>
+	      		<tr>
+	      			<th>ABC</th>
+	      			<th>XYZ</th>
+	      			<th>TEST</th>
+	      		</tr>
+	      	</thead>
+	      	<tbody>
+	      		<tr>
+	      		</tr>
+	      	</tbody>
+	      	</table>
+      	</div>
+      </div>
+      		            
     </section>
     
     <script>
-    var ctx = document.getElementById("myChart").getContext('2d');
-	var myChart = new Chart(ctx, {
+    
+    function fnGetTableData() {
+    	
+    }
+        
+	var grafico1 = new Chart(fnGetCanvas('grafico-1'), {
 	    type: 'bar',
 	    data: {
 	        labels: ["Guayas", "Pichincha", "Santo Domingo", "Imbabura", "Pastaza", "Otras Provincias"],
@@ -25,12 +78,12 @@
 	            label: 'Empresas por Provincia',
 	            data: [12, 19, 3, 5, 2, 7],
 	            backgroundColor: [
-					'rgba(0,158,126, 0.2)',
-					'rgba(236,93,94, 0.2)',
-					'rgba(61,134,189, 0.2)',
-					'rgba(251,177,0, 0.2)',
-					'rgba(255,0,12, 0.2)',
-					'rgba(45,196,55, 0.2)'
+					'rgba(0,158,126, 0.7)',
+					'rgba(236,93,94, 0.7)',
+					'rgba(61,134,189, 0.7)',
+					'rgba(251,177,0, 0.7)',
+					'rgba(255,0,12, 0.7)',
+					'rgba(45,196,55, 0.7)'
 	            ],
 	            borderColor: [
 					'rgba(0,158,126, 1)',
@@ -43,12 +96,52 @@
 	            borderWidth: 4
 	        }]
 	    },
-	    options: {
-	        scales: {
-	            yAxes: [{
-	                ticks: { beginAtZero:true }
-	            }]
-	        }
-	    }
-	});    
+// 	    options: {
+// 	        scales: {
+// 	            yAxes: [{
+// 	                ticks: { beginAtZero:true }
+// 	            }]
+// 	        }
+// 	    }
+	});
+	
+		
+	var grafico2 = new Chart(fnGetCanvas('grafico-2'), {
+	    type: 'horizontalBar',
+	    data: {
+	        labels: ["Guayas", "Pichincha", "Santo Domingo", "Imbabura", "Pastaza", "Otras Provincias"],
+	        datasets: [{
+	            label: 'Empresas por Provincia',
+	            data: [12, 19, 3, 5, 2, 7],
+	            backgroundColor: [
+					'rgba(0,158,126, 0.7)',
+					'rgba(236,93,94, 0.7)',
+					'rgba(61,134,189, 0.7)',
+					'rgba(251,177,0, 0.7)',
+					'rgba(255,0,12, 0.7)',
+					'rgba(45,196,55, 0.7)'
+	            ],
+	            borderColor: [
+					'rgba(0,158,126, 1)',
+					'rgba(236,93,94, 1)',
+					'rgba(61,134,189, 1)',
+					'rgba(251,177,0, 1)',
+					'rgba(255,0,12, 1)',
+					'rgba(45,196,55, 1)'	                          
+	            ],
+	            borderWidth: 4
+	        }]
+	    },
+// 	    options: {
+// 	        scales: {
+// 	            yAxes: [{
+// 	                ticks: { beginAtZero:true }
+// 	            }]
+// 	        }
+// 	    }
+	});
+	
     </script>
+    
+</body>
+</html>
