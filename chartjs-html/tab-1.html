@@ -48,20 +48,12 @@
 		<div class="clearfix">&nbsp;</div>
 
 		<div class="col-12 placeholder">
+				
 			<div class="card">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>ABC</th>
-							<th>XYZ</th>
-							<th>TEST</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						</tr>
-					</tbody>
-				</table>
+				<h4> <i class="fa fa-table"></i> Clientes por Provincia</h4>
+				<div class="text-muted">Filtro: Periodo 2016 - 2017</div>
+				
+				<table id="resultTable1" class="table table-striped"></table>
 			</div>
 		</div>
 
@@ -70,7 +62,23 @@
 <script>
     
     function fnGetTableData() {
-    	
+    	return [['Comercio al por mayor y al por menor','3','73559251','12837449','86396700'],
+    	        ['Actividades profesionales, científicas y técnicas.','2','51911035','10679172','62590207'],
+    	        ['Construcción','787','40163023','10738945','50901968'],
+    	        ['Industrias manufactureras','686','28873589','8998081','37871669'],
+    	        ['Agricultura, ganadería,  silvicultura y pesca','650','18420908','859','19280124'],
+    	        ['Transporte y almacenamiento','552','7793431','1096676','8890107'],
+    	        ['Servicios administrativos y de apoyo','237','5137568','1565332','6702899'],
+    	        ['Actividades inmobiliarias','192','5787461','587','6374427'],
+    	        ['Atención de la salud humana y de asistencia social','92','5259419','375','5634662'],
+    	        ['Otras actividades','103','3685289','599','4284093'],
+    	        ['Actividades financieras y de seguros','56','2163083','926','3089372'],
+    	        ['Actividades de alojamiento y de servicio de comidas','146','2069784','287','2356541'],
+    	        ['Información y comunicación','97','1873653','268','2141893'],
+    	        ['Otras actividades de servicios','105','1651761','363','2014579'],
+    	        ['Explotación de minas y canteras','61','996','531','1526803'],
+    	        ['Enseñanza','48','983','261','1243664'],
+    	        ['Total','8','250328157','50971551','301299708']];
     }
         
 	var grafico1 = new Chart(fnGetCanvas('grafico-1'), {
@@ -142,6 +150,20 @@
 // 	            }]
 // 	        }
 // 	    }
+	});
+	
+	var resultTable1 = $('#resultTable1').dataTable({
+		lengthChange: false,
+		paging: false,		
+		data: fnGetTableData(),
+		columns: [
+		    {title:'Sector Económico'},
+		    {title:'Cantidad de contribuyentes'},
+		    {title:'Regularizado por Impuesto a la  Renta'},
+		    {title:'Regularizado por IVA'},
+		    {title:'Total regularizado'}
+		],
+		order: [[ 0, "asc" ]],
 	});
 	
     </script>
