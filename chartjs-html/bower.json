@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "chart.js": "^2.6.0",
-    "bootstrap": "v4.0.0-beta",
+    "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
     "datatables.net": "^1.10.15",
     "datatables.net-bs": "^2.1.1",

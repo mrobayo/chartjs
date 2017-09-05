@@ -8,38 +8,36 @@
 	<h1>Análisis por Ingresos</h1>
 
 	<!-- Div - Filtros  -->
-	<div class="col-12 placeholder bg-secondary py-2 mb-4">
+	<div class="col-xs-12 placeholder">
 		<!-- Filtros  -->
-		<form autocomplete="off" novalidate onsubmit="return false;">
-			<div class="form-row align-items-center">
-				<div class="col-auto">
-					<select class="form-control">
+		<form autocomplete="off" novalidate onsubmit="return false;" class="form-inline">
+		
+				<div class="form-group">
+					<select class="form-control" style="width: auto;">
 						<option value="">-- Seleccione Periodo</option>
 						<option value="">2017</option>
 						<option value="">2016</option>
 						<option value="">2015</option>
 					</select>
 				</div>
-				<div class="col-auto">
-					<input type="text" class="form-control"
-						placeholder="Nombre del Cliente">
+				<div class="form-group">
+					<input type="text" class="form-control" style="width: auto;" placeholder="Nombre del Cliente">
 				</div>
 				<button class="btn btn-light float-right">
 					<i class="fa fa-refresh"></i> Actualizar
 				</button>
-			</div>
+			
 		</form>
 	</div>
 
 	<section class="row text-center placeholders">
-
-		<div class="col-6 placeholder">
+		<div class="col-xs-6 placeholder">
 			<canvas id="grafico-1"></canvas>
 			<h4>Clientes por Provincia</h4>
 			<div class="text-muted">Filtro: Periodo 2016 - 2017</div>
 		</div>
 
-		<div class="col-6 placeholder">
+		<div class="col-xs-6 placeholder">
 			<canvas id="grafico-2"></canvas>
 			<h4>Titulo 2</h4>
 			<span class="text-muted">Descripcion titulo 2</span>
@@ -47,16 +45,13 @@
 
 		<div class="clearfix">&nbsp;</div>
 
-		<div class="col-12 placeholder">
-				
+		<div class="col-xs-12 placeholder">				
 			<div class="card">
 				<h4> <i class="fa fa-table"></i> Clientes por Provincia</h4>
-				<div class="text-muted">Filtro: Periodo 2016 - 2017</div>
-				
+				<div class="text-muted">Filtro: Periodo 2016 - 2017</div>				
 				<table id="resultTable1" class="table table-striped"></table>
 			</div>
 		</div>
-
 	</section>
 
 <script>
