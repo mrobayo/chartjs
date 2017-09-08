@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+</head> 
+<body>
+
+	<h1>Mapa</h1>
+    		
+    <section class="row text-center placeholders">
+    
+      <div class="col-xs-6 placeholder">
+        <div id="ecPais" style="height: 400px"></div>		              
+        <h4>Ecuador</h4>
+        <div class="text-muted">Un lugar lindo para vivir</div>
+      </div>
+      
+      <div class="col-xs-6 placeholder">
+        <div id="ecProvincias" style="height: 400px"></div>		              
+        <h4>Provincias</h4>
+        <div class="text-muted">Un lugar lindo para vivir</div>
+      </div>
+          	            
+    </section>
+    
+    <script>    
+    var vMapMarkers = [
+		       			{latLng: [-2.8615,-79.22], name: 'CUENCA'},
+		       		    {latLng: [-3.1795,-79.1593], name: 'GIRON'},
+		       		    {latLng: [-2.9186,-78.7764], name: 'GUALACEO'}, 
+		       		    {latLng: [-3.3298,-79.1189], name: 'NABON'}
+		       		];
+		
+		$('#ecPais').vectorMap({
+			map: 'ec_mill_en',
+			zoomOnScroll: false,
+			hoverOpacity: 0.7,
+			backgroundColor: '#8C96C6', 
+			markerStyle: {
+				initial: {
+					fill: '#F8E23B', 
+					stroke: '#383f47', 
+				}
+			},
+			markers: vMapMarkers,
+			regionStyle: {
+				initial: {
+					fill: '#BCBDDC', //'#BCBDDC',
+					"fill-opacity": 1,
+					stroke: '#8C6BB1', //'#8C6BB1',
+					"stroke-width": 1,
+					"stroke-opacity": 0.4
+				},
+				hover: { "fill-opacity": 0.8 },
+				selected: { fill: 'yellow' },
+				selectedHover: { }
+			},
+			//series: vmSeries
+		}); 
+		
+		$('#ecProvincias').vectorMap({
+			map: 'ec_prov_mill_en',
+			zoomOnScroll: false,
+			hoverOpacity: 0.7,
+			backgroundColor: '#8C96C6', 
+			markerStyle: {
+				initial: {
+					fill: '#F8E23B', 
+					stroke: '#383f47', 
+				}
+			},
+			markers: vMapMarkers,
+			regionStyle: {
+				initial: {
+					fill: '#BCBDDC', //'#BCBDDC',
+					"fill-opacity": 1,
+					stroke: '#8C6BB1', //'#8C6BB1',
+					"stroke-width": 1,
+					"stroke-opacity": 0.4
+				},
+				hover: { "fill-opacity": 0.8 },
+				selected: { fill: 'yellow' },
+				selectedHover: { }
+			},
+			//series: vmSeries
+		}); 
+		
+		 
+		
+    </script>
+
+</body>
+</html>
